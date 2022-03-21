@@ -1,0 +1,31 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://admin:123456.@ms-product.ouyt2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      shared:
+        automatic-transition-from-open-to-half-open-enabled: true
+        failure-rate-threshold: 40
+        max-wait-duration-in-half-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 1
+        register-health-indicator: true
+        sliding-window-size: 5
+        sliding-window-type: count_based
+        slow-call-duration-threshold: 2s
+        slow-call-rate-threshold: 40
+        wait-duration-in-open-state: 10s
+        writable-stack-trace-enabled: true
+    instances:
+      example:
+        base-config: shared
+  timelimiter:
+    configs:
+      shared:
+        cancel-running-future: true
+        timeout-duration: 2s
+    instances:
+      example:
+        base-config: shared
