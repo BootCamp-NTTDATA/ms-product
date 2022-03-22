@@ -22,7 +22,7 @@ public class Resilience4JControllerIntegrationTest {
     public void test(RepetitionInfo repetitionInfo) {
         int delay = 1 + (repetitionInfo.getCurrentRepetition() % 2);
         webTestClient.get()
-                .uri("/api/credit-type/delay/{delay}", delay)
+                .uri("/api/product/credit-type/delay/{delay}", delay)
                 .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .exchange()
                 .expectStatus()

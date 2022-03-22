@@ -1,7 +1,10 @@
 spring:
-  data:
-    mongodb:
-      uri: mongodb+srv://admin:123456.@ms-product.ouyt2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+  application:
+    name: ms-product
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8090
 
 resilience4j:
   circuitbreaker:

@@ -18,7 +18,7 @@ import java.time.Duration;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/credit-type")
+@RequestMapping("/api/product/credit-type")
 public class CreditTypeController {
 
     private static final String RESILIENCE4J_INSTANCE_NAME = "example";
