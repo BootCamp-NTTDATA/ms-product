@@ -2,7 +2,7 @@ package com.bootcamp.msproduct.resource;
 
 import com.bootcamp.msproduct.dto.CreditCardDto;
 import com.bootcamp.msproduct.entity.CreditCard;
-import com.bootcamp.msproduct.service.ICreditCardService;
+import com.bootcamp.msproduct.service.CreditCardServiceImpl;
 import com.bootcamp.msproduct.util.MapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 @Service
 public class CreditCardResource extends MapperUtil {
     @Autowired
-    private ICreditCardService creditCardService;
+    private CreditCardServiceImpl creditCardService;
 
     public Mono<CreditCardDto> create(CreditCardDto creditCardDto) {
         CreditCard creditCard = map(creditCardDto, CreditCard.class);
@@ -42,11 +42,7 @@ public class CreditCardResource extends MapperUtil {
         return creditCardService.findById(id).map(x -> map(x, CreditCardDto.class));
     }
 
-    public Mono<CreditCardDto> findByName(String name) {
-        return creditCardService.findByName(name).map(x -> map(x, CreditCardDto.class));
-    }
-
-    public Flux<CreditCardDto> findByClientType(String clientType) {
-        return creditCardService.findByClientType(clientType).map(x -> map(x, CreditCardDto.class));
+    public Mono<CreditCardDto> findByType(String type) {
+        return creditCardService.findByType(type).map(x -> map(x, CreditCardDto.class));
     }
 }

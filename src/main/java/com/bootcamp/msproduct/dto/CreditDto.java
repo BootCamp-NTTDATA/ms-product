@@ -9,11 +9,11 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CreditCardDto {
+public class CreditDto {
     private String id;
     private String type;
-    private BigDecimal limit;
     private BigDecimal interestRateMonth;
     private Boolean allowCompany;
     private Boolean allowPerson;
+    private Boolean needCreditCard;
 }

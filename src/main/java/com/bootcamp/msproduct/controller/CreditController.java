@@ -1,8 +1,8 @@
 package com.bootcamp.msproduct.controller;
 
-import com.bootcamp.msproduct.dto.CreditTypeDto;
+import com.bootcamp.msproduct.dto.CreditDto;
 import com.bootcamp.msproduct.entity.Response;
-import com.bootcamp.msproduct.resource.CreditTypeResource;
+import com.bootcamp.msproduct.resource.CreditResource;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
@@ -18,33 +18,33 @@ import java.time.Duration;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/product/credit-type")
-public class CreditTypeController {
+@RequestMapping("/api/product/credit")
+public class CreditController {
 
     private static final String RESILIENCE4J_INSTANCE_NAME = "example";
     private static final String FALLBACK_METHOD = "fallback";
 
     @Autowired
-    private CreditTypeResource creditTypeResource;
+    private CreditResource creditResource;
 
     @PostMapping
-    public Mono<CreditTypeDto> create(@RequestBody CreditTypeDto creditTypeDto){
-        return creditTypeResource.create(creditTypeDto);
+    public Mono<CreditDto> create(@RequestBody CreditDto creditDto){
+        return creditResource.create(creditDto);
     }
 
     @PutMapping
-    public Mono<CreditTypeDto> update(@RequestBody CreditTypeDto creditTypeDto){
-        return creditTypeResource.update(creditTypeDto);
+    public Mono<CreditDto> update(@RequestBody CreditDto creditDto){
+        return creditResource.update(creditDto);
     }
 
     @GetMapping
-    public Flux<CreditTypeDto> findAll(){
-        return creditTypeResource.findAll();
+    public Flux<CreditDto> findAll(){
+        return creditResource.findAll();
     }
 
     @DeleteMapping
-    public Mono<Void> delete(@RequestBody CreditTypeDto creditTypeDto){
-        return creditTypeResource.delete(creditTypeDto);
+    public Mono<Void> delete(@RequestBody CreditDto creditDto){
+        return creditResource.delete(creditDto);
     }
 
     /*

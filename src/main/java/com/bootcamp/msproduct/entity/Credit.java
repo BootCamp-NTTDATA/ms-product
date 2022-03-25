@@ -1,6 +1,5 @@
-package com.bootcamp.msproduct.dto;
+package com.bootcamp.msproduct.entity;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,12 +7,10 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public class CreditCardDto {
-    private String id;
+public class Credit extends BaseEntity{
     private String type;
-    private BigDecimal limit;
     private BigDecimal interestRateMonth;
     private Boolean allowCompany;
     private Boolean allowPerson;
+    private Boolean needCreditCard;
 }
