@@ -9,7 +9,6 @@ import java.math.BigDecimal;
 @Setter
 public class CreditCard extends BaseEntity{
     private String type;
-    private BigDecimal limit;
     private BigDecimal interestRateMonth;
     private Boolean allowCompany;
     private Boolean allowPerson;

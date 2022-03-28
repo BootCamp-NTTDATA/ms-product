@@ -1,4 +1,4 @@
-package com.bootcamp.msproduct.controller;
+package com.bootcamp.msproduct.repository.controller;
 
 import com.bootcamp.msproduct.dto.CreditCardDto;
 import com.bootcamp.msproduct.resource.CreditCardResource;

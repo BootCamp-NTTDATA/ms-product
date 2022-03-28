@@ -12,7 +12,6 @@ import java.math.BigDecimal;
 public class CreditCardDto {
     private String id;
     private String type;
-    private BigDecimal limit;
     private BigDecimal interestRateMonth;
     private Boolean allowCompany;
     private Boolean allowPerson;
