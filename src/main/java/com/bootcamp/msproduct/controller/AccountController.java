@@ -1,4 +1,4 @@
-package com.bootcamp.msproduct.repository.controller;
+package com.bootcamp.msproduct.controller;
 
 import com.bootcamp.msproduct.dto.AccountDto;
 import com.bootcamp.msproduct.resource.AccountResource;

@@ -1,4 +1,4 @@
-package com.bootcamp.msproduct.repository.controller;
+package com.bootcamp.msproduct.controller;
 
 import com.bootcamp.msproduct.dto.CreditDto;
 import com.bootcamp.msproduct.entity.Response;
