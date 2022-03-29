@@ -9,10 +9,15 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CreditCardDto {
+public class AccountDto {
     private String id;
+    private BigDecimal maintenanceCommission;
+    private BigDecimal transactionCommission;
+    private BigDecimal minimumOpeningAmount;
+    private int numLimitMovements;
     private String type;
-    private BigDecimal interestRateMonth;
+    private int dayMovement;
     private Boolean allowCompany;
     private Boolean allowPerson;
+    private Boolean needCreditCard;
 }

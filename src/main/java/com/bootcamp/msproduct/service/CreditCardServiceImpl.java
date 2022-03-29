@@ -35,11 +35,16 @@ public class CreditCardServiceImpl implements ICreditCardService {
 
     @Override
     public Flux<CreditCard> findByClientType(String clientType) {
-        return creditCardRepository.findByClientType(clientType);
+        return null;
     }
 
     @Override
     public Mono<CreditCard> findByName(String name) {
-        return creditCardRepository.findByName(name);
+        return null;
+    }
+
+    @Override
+    public Mono<CreditCard> findByType(String type) {
+        return creditCardRepository.findByType(type);
     }
 }

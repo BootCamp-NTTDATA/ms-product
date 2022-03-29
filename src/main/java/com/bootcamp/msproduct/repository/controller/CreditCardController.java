@@ -1,4 +1,4 @@
-package com.bootcamp.msproduct.controller;
+package com.bootcamp.msproduct.repository.controller;
 
 import com.bootcamp.msproduct.dto.CreditCardDto;
 import com.bootcamp.msproduct.resource.CreditCardResource;
@@ -38,13 +38,8 @@ public class CreditCardController {
         return creditCardResource.findById(id);
     }
 
-    @GetMapping("/client-type/{clientType}")
-    public Flux<CreditCardDto> findByClientType(@PathVariable String clientType) {
-        return creditCardResource.findByClientType(clientType);
-    }
-
-    @GetMapping("/name/{name}")
-    public Mono<CreditCardDto> findByName(@PathVariable String name) {
-        return creditCardResource.findByName(name);
+    @GetMapping("/type/{type}")
+    public Mono<CreditCardDto> findByType(@PathVariable String type) {
+        return creditCardResource.findByType(type);
     }
 }

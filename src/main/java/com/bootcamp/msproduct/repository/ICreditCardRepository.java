@@ -8,6 +8,5 @@ import reactor.core.publisher.Mono;
 
 @Repository
 public interface ICreditCardRepository extends ReactiveMongoRepository<CreditCard, String> {
-    Flux<CreditCard> findByClientType(String clientType);
-    Mono<CreditCard> findByName(String name);
+    Mono<CreditCard> findByType(String type);
 }
