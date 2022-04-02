@@ -38,7 +38,6 @@ public class AccountResource extends MapperUtil {
     }
 
     public Flux<AccountDto> findAll() {
-
         return accountService.findAll()
                 .map(x -> map(x, AccountDto.class));
     }
@@ -48,7 +47,6 @@ public class AccountResource extends MapperUtil {
     }
 
     public Mono<AccountDto> findByType(String type) {
-
         return accountService.findByType(type)
                 .map(x -> map(x, AccountDto.class));
     }
