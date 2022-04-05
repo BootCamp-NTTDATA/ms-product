@@ -44,9 +44,4 @@ public class WalletResource extends MapperUtil {
     public Mono<WalletDto> findById(String id) {
         return walletService.findById(id).map(x -> map(x, WalletDto.class));
     }
-
-    public Mono<WalletDto> findByType(String type){
-        return walletService.findByType(type)
-                .map(x -> map(x, WalletDto.class));
-    }
 }

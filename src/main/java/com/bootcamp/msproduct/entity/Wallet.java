@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 public class Wallet extends BaseEntity{
-    private BigDecimal maxAmountMovement;
-    private String type;
+    private String name;
+    private String code;
+    private BigDecimal maxAmountDay;
 }

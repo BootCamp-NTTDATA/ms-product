@@ -14,11 +14,6 @@ public class WalletServiceImpl implements IWalletService {
     private IWalletRepository iWalletRepository;
 
     @Override
-    public Mono<Wallet> findByType(String type) {
-        return iWalletRepository.findByType(type);
-    }
-
-    @Override
     public Mono<Wallet> save(Wallet wallet) {
         return iWalletRepository.save(wallet);
     }

@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class WalletDto {
     private String id;
-    private BigDecimal maxAmountMovement;
-    private String type;
+    private String name;
+    private String code;
+    private BigDecimal maxAmountDay;
 }

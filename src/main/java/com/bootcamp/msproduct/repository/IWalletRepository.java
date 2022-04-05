@@ -7,5 +7,4 @@ import reactor.core.publisher.Mono;
 
 @Repository
 public interface IWalletRepository extends ReactiveMongoRepository<Wallet, String> {
-    Mono<Wallet> findByType(String type);
 }

@@ -38,9 +38,4 @@ public class WalletController {
     public Mono<WalletDto> findById(@PathVariable String id) {
         return walletResource.findById(id);
     }
-
-    @GetMapping("/type/{type}")
-    public Mono<WalletDto> findByType(@PathVariable String type) {
-        return walletResource.findByType(type);
-    }
 }
