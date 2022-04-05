@@ -1,5 +1,6 @@
 package com.bootcamp.msproduct.resource;
 
+import com.bootcamp.msproduct.dto.CreditCardDto;
 import com.bootcamp.msproduct.dto.CreditDto;
 import com.bootcamp.msproduct.entity.Credit;
 import com.bootcamp.msproduct.service.ICreditService;
@@ -23,10 +24,6 @@ public class CreditResource extends MapperUtil {
         return entity.map(x->map(x, CreditDto.class));
     }
 
-    public Flux<CreditDto> findAll(){
-        return iCreditService.findAll().map(x->map(x, CreditDto.class));
-    }
-
     public Mono<CreditDto> update(CreditDto creditDto){
         Credit credit = map(creditDto, Credit.class);
         return iCreditService.findById(creditDto.getId())
@@ -40,9 +37,17 @@ public class CreditResource extends MapperUtil {
                 .map(x->map(x, CreditDto.class));
     }
 
+    public Flux<CreditDto> findAll(){
+        return iCreditService.findAll().map(x->map(x, CreditDto.class));
+    }
+
     public Mono<Void> delete(CreditDto creditDto){
         return iCreditService.findById(creditDto.getId())
                 .switchIfEmpty(Mono.error(new Exception()))
                 .flatMap(x-> iCreditService.deleteById(creditDto.getId()));
+    }
+
+    public Mono<CreditDto> findByType(String type) {
+        return iCreditService.findByType(type).map(x -> map(x, CreditDto.class));
     }
 }

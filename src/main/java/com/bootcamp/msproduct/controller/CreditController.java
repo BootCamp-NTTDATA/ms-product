@@ -1,5 +1,6 @@
 package com.bootcamp.msproduct.controller;
 
+import com.bootcamp.msproduct.dto.CreditCardDto;
 import com.bootcamp.msproduct.dto.CreditDto;
 import com.bootcamp.msproduct.entity.Response;
 import com.bootcamp.msproduct.resource.CreditResource;
@@ -45,6 +46,16 @@ public class CreditController {
     @DeleteMapping
     public Mono<Void> delete(@RequestBody CreditDto creditDto){
         return creditResource.delete(creditDto);
+    }
+
+    @GetMapping("/{id}")
+    public Mono<CreditDto> findById(@PathVariable String id) {
+        return creditResource.findById(id);
+    }
+
+    @GetMapping("/type/{type}")
+    public Mono<CreditDto> findByType(@PathVariable String type) {
+        return creditResource.findByType(type);
     }
 
     /*

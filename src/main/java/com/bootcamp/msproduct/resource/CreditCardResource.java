@@ -27,19 +27,18 @@ public class CreditCardResource extends MapperUtil {
                 .flatMap(x ->creditCardService.save(creditCard).map(y -> map(y, CreditCardDto.class)));
     }
 
+    public Mono<CreditCardDto> findById(String id) {
+        return creditCardService.findById(id).map(x -> map(x, CreditCardDto.class));
+    }
+
+    public Flux<CreditCardDto> findAll() {
+        return creditCardService.findAll().map(x -> map(x, CreditCardDto.class));
+    }
+
     public Mono<Void> delete(CreditCardDto creditCardDto) {
         return creditCardService.findById(creditCardDto.getId())
                 .switchIfEmpty(Mono.error(new Exception()))
                 .flatMap(x -> creditCardService.deleteById(creditCardDto.getId()));
-    }
-
-    public Flux<CreditCardDto> findAll() {
-        return creditCardService.findAll()
-                .map(x -> map(x, CreditCardDto.class));
-    }
-
-    public Mono<CreditCardDto> findById(String id) {
-        return creditCardService.findById(id).map(x -> map(x, CreditCardDto.class));
     }
 
     public Mono<CreditCardDto> findByType(String type) {
